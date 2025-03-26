@@ -88,6 +88,3 @@ class ElasticSearchClient:
         else:
             return []
         
-# es = ElasticSearchClient()
-# es.create_person_identity_index()
-# es.load_person_identity()

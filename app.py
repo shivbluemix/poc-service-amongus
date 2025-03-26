@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from router_agent import RouterAgent
 from langchain_core.messages import HumanMessage
 import uuid
+from elasticsearch_client import ElasticSearchClient
 
 # Initialize FastAPI app
 app = FastAPI(
@@ -14,7 +15,9 @@ app = FastAPI(
 # Initialize the RouterAgent
 config = {"configurable": {"thread_id": uuid.uuid4()}}
 router_agent = RouterAgent()
-
+es = ElasticSearchClient()
+es.create_person_identity_index()
+es.load_person_identity()
 
 # Define the request model
 class UserMessage(BaseModel):
