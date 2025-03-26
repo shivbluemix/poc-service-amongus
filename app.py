@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from router_agent import RouterAgent
 from langchain_core.messages import HumanMessage
 import uuid
-from elasticsearch_client import ElasticSearchClient
+from elastic_client import ElasticSearchClient
 
 # Initialize FastAPI app
 app = FastAPI(
